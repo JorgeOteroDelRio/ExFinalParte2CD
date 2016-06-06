@@ -17,18 +17,19 @@ public class Principal {
         do {
             dig = introducirDigito();
             if (dig <= 0) {
-                System.out.println("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
+                System.out.println("Ingrese como parámetro, un numero de digito correcto (mayor que 0): ");
             }
-        } while (dig <= 0);
+        } while (dig <= 0); //Para que introduzca un número mayor que 0
         for (int numComparar = 1; numComparar <= 99999; numComparar++) {
-            ndig = contarDivisionEntera(numComparar);
-
+            ndig = contarDivisionEntera(numComparar); //Número de cifras del número introducido por el usuario
+            
+            //Si el dígito y su número de cifras es igual
             if (ndig == dig) {
-                if (numComparar < 4) {
+                if (numComparar < 4) { //Si el número que está comparando es menor que 4 entonces es primo
                     esPrimo = true;
-                } else if (numComparar % 2 == 0) {
+                } else if (numComparar % 2 == 0) { //Si el número que compara es divisible entre 2 no es primo
                     esPrimo = false;
-                } else {
+                } else { 
                     int countDivisores = 0;
                     int i1 = 1;
                     int limite = (numComparar - 1) / 2;
