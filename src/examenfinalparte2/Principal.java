@@ -2,6 +2,11 @@ package examenfinalparte2;
 
 import java.util.Scanner;
 
+/**
+ * Se evalúa si un número es primo o no y se mostrarán los números primos
+ * de el número de cifras que introduzca el usuario.
+ * @author jota
+ */
 public class Principal {
 
     public static boolean esPrimo = false;
@@ -40,7 +45,15 @@ public class Principal {
             }
         }
     }
-
+    
+    /**
+     * Calcula el número de divisores del número pasado
+     * @param i1 Divisor
+     * @param limite Límite de divisores
+     * @param numComparar Número del que se van a contar los divisores
+     * @param countDivisores Contador de divisores
+     * @return Si numComparar es primo o no
+     */
     private static boolean calculaNumDivisores(int i1, int limite, int numComparar, int countDivisores) {
         boolean esPrimo = false;
         while (i1 <= limite) {
@@ -60,6 +73,12 @@ public class Principal {
         return esPrimo;
     }
 
+    /**
+     * Cuenta el número de divisiones enteras que se pueden realizar sobre el
+     * número pasado por parámetros.
+     * @param numComparar Número dividendo
+     * @return El número de divisiones enteras
+     */
     private static int contarDivisionEntera(int numComparar) {
         int aux = numComparar;
         int contador = 0;
@@ -69,7 +88,11 @@ public class Principal {
         }
         return contador;
     }
-
+    
+    /**
+     * Pide un número entero por pantalla
+     * @return El número entero introducido por el usuario
+     */
     public static int introducirDigito() {
         Scanner teclado = new Scanner(System.in);
         System.out.println("Introduce un dígito:");
